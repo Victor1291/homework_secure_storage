@@ -1,21 +1,28 @@
 buildscript {
-    ext.kotlin_version = "1.8.10"
+    ext.kotlin_version = "1.9.22"
+    ext.ksp_version = "1.9.23-1.0.20"
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:7.3.1"
+        classpath "com.android.tools.build:gradle:8.3.2"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.45'
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
+        classpath 'com.google.dagger:hilt-android-gradle-plugin:2.51.1'
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.7.7"
     }
+}
+
+plugins {
+    id 'com.google.devtools.ksp' version '1.9.23-1.0.20'
 }
 
 allprojects {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 
